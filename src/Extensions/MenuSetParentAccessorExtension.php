@@ -8,7 +8,7 @@ use SilverStripe\SiteConfig\SiteConfig;
 
 class MenuSetParentAccessorExtension extends Extension
 {
-    public function getCurrentMenuSetParent()
+    public function getCurrentMenuSetParent(): SiteConfig
     {
         $parent = SiteConfig::current_site_config();
         $this->getOwner()->invokeWithExtensions('updateCurrentMenuSetParent', $parent);

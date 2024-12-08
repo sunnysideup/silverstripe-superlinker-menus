@@ -1,7 +1,5 @@
 ---
 Name: fromholdio-superlinker-menus-example
-Except:
-  moduleexists: 'symbiote/silverstripe-multisites'
 ---
 Fromholdio\SuperLinkerMenus\Model\MenuSet:
   has_one:
@@ -17,21 +15,3 @@ SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Fromholdio\SuperLinkerMenus\Extensions\MenuSetParentExtension
 
----
-Name: fromholdio-superlinker-menus-multisites-example
-Only:
-  moduleexists: 'symbiote/silverstripe-multisites'
----
-Fromholdio\SuperLinkerMenus\Model\MenuSet:
-  has_one:
-    Parent: Symbiote\Multisites\Model\Site
-  menus:
-    main:
-      name: 'Main Menu'
-      enable_title: true
-      limit: 6
-      max_depth: 1
-
-Symbiote\Multisites\Model\Site:
-  extensions:
-    - Fromholdio\SuperLinkerMenus\Extensions\MenuSetParentExtension
