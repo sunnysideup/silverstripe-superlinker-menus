@@ -3,22 +3,30 @@
     "type": "silverstripe-vendormodule",
     "description": "Menu management built using the Superlinker foundation",
     "license": "BSD-3-Clause",
-    "keywords": ["silverstripe", "link", "superlinker", "menus"],
+    "keywords": [
+        "silverstripe",
+        "link",
+        "superlinker",
+        "menus"
+    ],
     "homepage": "https://github.com/fromholdio/silverstripe-superlinker-menus",
     "support": {
         "issues": "https://github.com/fromholdio/silverstripe-superlinker-menus/issues"
     },
-    "authors": [{
-        "name": "Luke Fromhold",
-        "homepage": "https://fromhold.io"
-    }],
+    "authors": [
+        {
+            "name": "Luke Fromhold",
+            "homepage": "https://fromhold.io"
+        }
+    ],
     "require": {
         "fromholdio/silverstripe-dependentgroupeddropdownfield": "^3.0.0",
         "fromholdio/silverstripe-globalanchors": "^2.0.0",
         "fromholdio/silverstripe-sortable": "^3.0.0",
         "fromholdio/silverstripe-superlinker": "^3.0.0",
         "symbiote/silverstripe-gridfieldextensions": "^4.0.0",
-        "unclecheese/display-logic": "^3.0.0"
+        "unclecheese/display-logic": "^3.0.0",
+        "fromholdio/silverstripe-gridfield-limiter": "^1.0.0"
     },
     "autoload": {
         "psr-4": {

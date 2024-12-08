@@ -134,8 +134,7 @@ class MenuSet extends DataObject implements PermissionProvider
                     $menuSet = $menuSet->updateFromConfig($data);
                     $updatedMenuSetIDs[] = $menuSet->ID;
                     unset($configMenuSets[$menuSet->Key]);
-                }
-                else {
+                } else {
                     if ($menuSet->isVersioned()) {
                         $menuSet->doArchive();
                     } else {
@@ -150,8 +149,7 @@ class MenuSet extends DataObject implements PermissionProvider
                 $menuSet = $menuSet->updateFromConfig($data);
                 $updatedMenuSetIDs[] = $menuSet->ID;
             }
-        }
-        else {
+        } else {
             if ($menuSets->count() > 0) {
                 foreach ($menuSets as $menuSet) {
                     if ($menuSet->isVersioned()) {
@@ -181,8 +179,7 @@ class MenuSet extends DataObject implements PermissionProvider
                     }
                 }
             }
-        }
-        else {
+        } else {
             $config = Config::inst()->get(self::class, 'menus');
             if (is_array($config)) {
                 foreach ($config as $key => $data) {
@@ -209,8 +206,7 @@ class MenuSet extends DataObject implements PermissionProvider
             foreach ($menuSets as $menuSet) {
                 if ($menuSet->isVersioned()) {
                     $menuSet->doArchive();
-                }
-                else {
+                } else {
                     $menuSet->delete();
                 }
             }
@@ -236,8 +232,7 @@ class MenuSet extends DataObject implements PermissionProvider
         if (is_a($curr, LeftAndMain::class)) {
             if ($title) {
                 $title = $this->Name . ' - ' . $title;
-            }
-            else {
+            } else {
                 $title = $this->Name;
             }
         }
@@ -284,12 +279,11 @@ class MenuSet extends DataObject implements PermissionProvider
             if ($isTitleEnabled && !$this->IsTitleEnabled) {
                 $this->IsTitleEnabled = true;
                 $doWrite = true;
-            }
-            else if (!$isTitleEnabled && $this->IsTitleEnabled) {
+            } elseif (!$isTitleEnabled && $this->IsTitleEnabled) {
                 $this->IsTitleEnabled = false;
                 $doWrite = true;
             }
-        } else if ($this->IsTitleEnabled) {
+        } elseif ($this->IsTitleEnabled) {
             $this->IsTitleEnabled = false;
             $doWrite = true;
         }
@@ -299,12 +293,11 @@ class MenuSet extends DataObject implements PermissionProvider
             if ($isHighlightEnabled && !$this->IsHighlightEnabled) {
                 $this->IsHighlightEnabled = true;
                 $doWrite = true;
-            }
-            else if (!$isHighlightEnabled && $this->IsHighlightEnabled) {
+            } elseif (!$isHighlightEnabled && $this->IsHighlightEnabled) {
                 $this->IsHighlightEnabled = false;
                 $doWrite = true;
             }
-        } else if ($this->IsHighlightEnabled) {
+        } elseif ($this->IsHighlightEnabled) {
             $this->IsHighlightEnabled = false;
             $doWrite = true;
         }
@@ -369,8 +362,7 @@ class MenuSet extends DataObject implements PermissionProvider
             if ($sameKeyMenuSets->count() > 0) {
                 $result->addFieldError('Key', 'You must use a unique key');
             }
-        }
-        else {
+        } else {
             $result->addFieldError('Key', 'You must provide a key');
         }
 
@@ -485,7 +477,8 @@ class MenuSet extends DataObject implements PermissionProvider
         return $can;
     }
 
-    public function providePermissions() {
+    public function providePermissions()
+    {
         return [
             'MANAGE_MENUSETS' => array(
                 'name' => 'Manage menu sets',
