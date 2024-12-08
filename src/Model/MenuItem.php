@@ -25,9 +25,9 @@ use UncleCheese\DisplayLogic\Forms\Wrapper;
 
 class MenuItem extends SuperLink implements PermissionProvider
 {
-    const SUBMENU_SITETREE = 'sitetree';
-    const SUBMENU_MANUAL = 'manual';
-    const SUBMENU_NONE = 'none';
+    public const SUBMENU_SITETREE = 'sitetree';
+    public const SUBMENU_MANUAL = 'manual';
+    public const SUBMENU_NONE = 'none';
 
     private static $table_name = 'MenuItem';
     private static $singular_name = 'Menu Item';
@@ -95,8 +95,7 @@ class MenuItem extends SuperLink implements PermissionProvider
         ]);
 
 
-        if ($this->getCanBeHighlighted())
-        {
+        if ($this->getCanBeHighlighted()) {
             $highlightField = FieldGroup::create(
                 CheckboxField::create(
                     'IsHighlighted',
@@ -222,7 +221,7 @@ class MenuItem extends SuperLink implements PermissionProvider
 
         $i = 1;
         $parent = $this;
-        while($parentID > 0) {
+        while ($parentID > 0) {
             $parent = $parent->Parent();
             $parentID = (int) $parent->ParentID;
             $i++;
@@ -251,8 +250,7 @@ class MenuItem extends SuperLink implements PermissionProvider
         $this->extend('updateSubmenuModeOptions', $options);
         if (!$options || !is_array($options)) {
             $options = null;
-        }
-        else if (count($options) === 1 && isset($options[self::SUBMENU_NONE])) {
+        } elseif (count($options) === 1 && isset($options[self::SUBMENU_NONE])) {
             $options = null;
         }
         return $options;
@@ -291,8 +289,7 @@ class MenuItem extends SuperLink implements PermissionProvider
                 $this->ID,
                 'edit'
             );
-        }
-        else if ($this->MenuSetID) {
+        } elseif ($this->MenuSetID) {
             $link = $this->MenuSet()->CMSEditLink();
             $link = preg_replace('/\/item\/([\d]+)\/edit/', '/item/$1', $link);
             $link = Controller::join_links(
@@ -311,7 +308,7 @@ class MenuItem extends SuperLink implements PermissionProvider
         $can = Permission::checkMember($member, 'MANAGE_MENUITEMS');
         if ($can) {
             if ($this->ParentID) {
-                $can = $this->Parent()->canView($member, $context);
+                $can = $this->Parent()->canView($member);
             }
         }
         return $can;
@@ -322,7 +319,7 @@ class MenuItem extends SuperLink implements PermissionProvider
         $can = Permission::checkMember($member, 'MANAGE_MENUITEMS');
         if ($can) {
             if ($this->ParentID) {
-                $can = $this->Parent()->canEdit($member, $context);
+                $can = $this->Parent()->canEdit($member);
             }
         }
         return $can;
@@ -333,7 +330,7 @@ class MenuItem extends SuperLink implements PermissionProvider
         $can = Permission::checkMember($member, 'DELETE_MENUITEMS');
         if ($can) {
             if ($this->ParentID) {
-                $can = $this->Parent()->canDelete($member, $context);
+                $can = $this->Parent()->canDelete($member);
             }
         }
         return $can;
@@ -350,7 +347,8 @@ class MenuItem extends SuperLink implements PermissionProvider
         return $can;
     }
 
-    public function providePermissions() {
+    public function providePermissions()
+    {
         return [
             'MANAGE_MENUITEMS' => array(
                 'name' => 'Manage menu items',
