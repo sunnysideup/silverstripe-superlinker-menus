@@ -23,6 +23,21 @@ use SilverStripe\Security\PermissionProvider;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
 
+/**
+ * Class \Fromholdio\SuperLinkerMenus\Model\MenuItem
+ *
+ * @property int $Sort
+ * @property string $SubmenuMode
+ * @property bool $IsHighlighted
+ * @property int $MenuSetID
+ * @property int $ParentID
+ * @property int $SubmenuSiteTreeID
+ * @method MenuSet MenuSet()
+ * @method MenuItem Parent()
+ * @method SiteTree SubmenuSiteTree()
+ * @method DataList|MenuItem[] Children()
+ * @mixin Sortable
+ */
 class MenuItem extends SuperLink implements PermissionProvider
 {
     public const SUBMENU_SITETREE = 'sitetree';

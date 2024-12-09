@@ -14,6 +14,12 @@ use SilverStripe\Forms\GridField\GridFieldPaginator;
 use SilverStripe\Forms\GridField\GridFieldToolbarHeader;
 use SilverStripe\Core\Extension;
 
+/**
+ * Class \Fromholdio\SuperLinkerMenus\Extensions\MenuSetParentExtension
+ *
+ * @property SiteConfig|MenuSetParentExtension $owner
+ * @method DataList|MenuSet[] MenuSets()
+ */
 class MenuSetParentExtension extends Extension
 {
     private static $menusets_tab_path = 'Root.Menus';

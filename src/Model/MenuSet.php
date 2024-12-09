@@ -30,6 +30,21 @@ use SilverStripe\Versioned\Versioned;
 use SilverStripe\View\SSViewer;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
+/**
+ * Class \Fromholdio\SuperLinkerMenus\Model\MenuSet
+ *
+ * @property string $Key
+ * @property string $Name
+ * @property string $CustomTitle
+ * @property bool $IsTitleEnabled
+ * @property bool $IsHighlightEnabled
+ * @property int $ItemsLimit
+ * @property int $MaxDepth
+ * @property int $Sort
+ * @property int $ParentID
+ * @method SiteConfig Parent()
+ * @method DataList|MenuItem[] Items()
+ */
 class MenuSet extends DataObject implements PermissionProvider
 {
     private static $table_name = 'MenuSet';
