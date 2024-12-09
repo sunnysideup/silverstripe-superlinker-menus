@@ -364,4 +364,16 @@ class MenuItem extends SuperLink implements PermissionProvider
             )
         ];
     }
+
+    public function ChildMenuItems()
+    {
+        if ($this->SubmenuMode === self::SUBMENU_MANUAL) {
+            return $this->Children();
+        } elseif ($this->SubmenuMode === self::SUBMENU_SITETREE) {
+            $siteTree = $this->SubmenuSiteTree();
+            if ($siteTree && $siteTree->exists()) {
+                return $siteTree->Children();
+            }
+        }
+    }
 }
