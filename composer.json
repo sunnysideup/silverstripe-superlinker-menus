@@ -21,7 +21,7 @@
     ],
     "require": {
         "fromholdio/silverstripe-dependentgroupeddropdownfield": "^3.0.0",
-        "fromholdio/silverstripe-globalanchors": "^2.0.0",
+        "fromholdio/silverstripe-globalanchors": "dev-master",
         "fromholdio/silverstripe-sortable": "^3.0.0",
         "fromholdio/silverstripe-superlinker": "dev-master",
         "symbiote/silverstripe-gridfieldextensions": "^4.0.0",
