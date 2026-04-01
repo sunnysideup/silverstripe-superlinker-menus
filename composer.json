@@ -23,7 +23,7 @@
         "fromholdio/silverstripe-dependentgroupeddropdownfield": "^3.0.0",
         "fromholdio/silverstripe-globalanchors": "dev-master",
         "fromholdio/silverstripe-sortable": "^3.0.0",
-        "fromholdio/silverstripe-superlinker": "dev-master",
+        "fromholdio/silverstripe-superlinker": "5.x-dev",
         "symbiote/silverstripe-gridfieldextensions": "^4.0.0",
         "unclecheese/display-logic": "^3.0.0",
         "fromholdio/silverstripe-gridfield-limiter": "^2.0"
