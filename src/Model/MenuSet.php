@@ -33,9 +33,9 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 /**
  * Class \Fromholdio\SuperLinkerMenus\Model\MenuSet
  *
- * @property string $Key
- * @property string $Name
- * @property string $CustomTitle
+ * @property ?string $Key
+ * @property ?string $Name
+ * @property ?string $CustomTitle
  * @property bool $IsTitleEnabled
  * @property bool $IsHighlightEnabled
  * @property int $ItemsLimit
@@ -44,6 +44,13 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
  * @property int $ParentID
  * @method SiteConfig Parent()
  * @method DataList|MenuItem[] Items()
+ * @mixin FileLinkTracking
+ * @mixin AssetControlExtension
+ * @mixin SiteTreeLinkTracking
+ * @mixin VersionedStateExtension
+ * @mixin RecursivePublishable
+ * @mixin DataObjectExtension
+ * @mixin FixBooleanSearchAsExtension
  */
 class MenuSet extends DataObject implements PermissionProvider
 {

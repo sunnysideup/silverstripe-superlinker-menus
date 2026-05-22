@@ -27,7 +27,7 @@ use UncleCheese\DisplayLogic\Forms\Wrapper;
  * Class \Fromholdio\SuperLinkerMenus\Model\MenuItem
  *
  * @property int $Sort
- * @property string $SubmenuMode
+ * @property ?string $SubmenuMode
  * @property bool $IsHighlighted
  * @property int $MenuSetID
  * @property int $ParentID
@@ -37,6 +37,13 @@ use UncleCheese\DisplayLogic\Forms\Wrapper;
  * @method SiteTree SubmenuSiteTree()
  * @method DataList|MenuItem[] Children()
  * @mixin Sortable
+ * @mixin FileLinkTracking
+ * @mixin AssetControlExtension
+ * @mixin SiteTreeLinkTracking
+ * @mixin VersionedStateExtension
+ * @mixin RecursivePublishable
+ * @mixin DataObjectExtension
+ * @mixin FixBooleanSearchAsExtension
  */
 class MenuItem extends SuperLink implements PermissionProvider
 {
