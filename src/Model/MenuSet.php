@@ -44,13 +44,13 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
  * @property int $ParentID
  * @method SiteConfig Parent()
  * @method DataList|MenuItem[] Items()
- * @mixin FileLinkTracking
  * @mixin AssetControlExtension
+ * @mixin DataObjectExtension
+ * @mixin FileLinkTracking
+ * @mixin FixBooleanSearchAsExtension
+ * @mixin RecursivePublishable
  * @mixin SiteTreeLinkTracking
  * @mixin VersionedStateExtension
- * @mixin RecursivePublishable
- * @mixin DataObjectExtension
- * @mixin FixBooleanSearchAsExtension
  */
 class MenuSet extends DataObject implements PermissionProvider
 {

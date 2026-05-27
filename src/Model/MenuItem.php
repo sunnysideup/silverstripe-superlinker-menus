@@ -36,14 +36,14 @@ use UncleCheese\DisplayLogic\Forms\Wrapper;
  * @method MenuItem Parent()
  * @method SiteTree SubmenuSiteTree()
  * @method DataList|MenuItem[] Children()
- * @mixin Sortable
- * @mixin FileLinkTracking
  * @mixin AssetControlExtension
- * @mixin SiteTreeLinkTracking
- * @mixin VersionedStateExtension
- * @mixin RecursivePublishable
  * @mixin DataObjectExtension
+ * @mixin FileLinkTracking
  * @mixin FixBooleanSearchAsExtension
+ * @mixin RecursivePublishable
+ * @mixin SiteTreeLinkTracking
+ * @mixin Sortable
+ * @mixin VersionedStateExtension
  */
 class MenuItem extends SuperLink implements PermissionProvider
 {
